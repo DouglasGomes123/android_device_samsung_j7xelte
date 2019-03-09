@@ -38,7 +38,7 @@ void vendor_load_properties()
     const std::string bootloader = android::base::GetProperty("ro.bootloader", "");
     const std::string bl_model = bootloader.substr(0, MODEL_NAME_LEN);
     const std::string bl_build = bootloader.substr(BUILD_NAME_LEN);
-    const std::string device ="j7xelte";
+    const std::string device = "j7xelte";
 
     std::string model;
     std::string name;

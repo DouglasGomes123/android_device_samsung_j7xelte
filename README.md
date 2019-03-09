@@ -3,6 +3,7 @@ Device configuration for the Samsung Galaxy J7 2016
 Copyright (C) 2017 The LineageOS Project
 Copyright (C) 2017 Siddhant Naik
 Copyright (C) 2019 yEsPaP
+
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
