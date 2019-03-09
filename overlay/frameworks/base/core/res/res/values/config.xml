@@ -17,6 +17,9 @@
 */
 -->
 <resources>
+   <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
+   <bool name="config_dozePulsePickup">true</bool>
+
     <!-- If this is true, the screen will fade off. -->
     <bool name="config_animateScreenLights">true</bool>
 
@@ -38,6 +41,7 @@
          Must be in the range specified by minimum and maximum. -->
     <integer name="config_screenBrightnessSettingDefault">110</integer>
 
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently in hardware. -->
     <bool name="config_nightDisplayAvailable">true</bool>
 
     <!-- Control whether the always on display mode is available. This should only be enabled on
