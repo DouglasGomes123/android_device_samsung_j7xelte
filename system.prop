@@ -10,7 +10,7 @@ dalvik.vm.heapminfree=512k
 dalvik.vm.heapmaxfree=8m
 
 # DPI
-ro.sf.lcd_density=480
+ro.sf.lcd_density=320
 
 # ro.product.first_api_level indicates the first api level the device has commercially launched on.
 ro.product.first_api_level=23
