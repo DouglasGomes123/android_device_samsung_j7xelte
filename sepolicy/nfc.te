@@ -11,3 +11,4 @@ allow nfc system_data_file:dir add_name;
 allow nfc sec_efs_file:dir search;
 allow nfc system_data_file:file create;
 allow nfc system_data_file:file write;
+
