@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=j7xelte
+DEVICE=on7xelte
 VENDOR=samsung
 
 INITIAL_COPYRIGHT_YEAR=2019

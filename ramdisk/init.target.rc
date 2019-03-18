@@ -1,3 +1,19 @@
+on post-fs-data
+    # Mobicore
+    export MC_AUTH_TOKEN_PATH /efs
+    mkdir /efs/TEE  0770 radio system
+    chmod 0660 /dev/t-base-tui
+    chown system system /dev/t-base-tui
+    start mobicore
+
+    mkdir /data/biometrics 0700 system system
+    restorecon_recursive /data/biometrics
+
+on post-fs
+    # Mobicore
+    setprop sys.mobicoredaemon.enable stopped
+
+
 on boot
 
 # Permissions for Accelerometer_sensor
@@ -46,6 +62,15 @@ on boot
     chown system radio /sys/class/camera/front/front_camtype
     chown system radio /sys/class/camera/front/front_caminfo
     chown system radio /sys/class/camera/front/front_sensorid
+
+# Permissions for Fingerprint_sensor
+    chown system radio /sys/class/fingerprint/fingerprint/type_check
+    chown system radio /sys/class/fingerprint/fingerprint/name
+    chown system radio /sys/class/fingerprint/fingerprint/vendor
+    chown system radio /sys/class/fingerprint/fingerprint/adm
+
+    chown system system /dev/esfp0
+    chmod 0660 /dev/esfp0
 
 # Permissions for LCD
     chown system radio /sys/class/lcd/panel/lcd_type
@@ -114,8 +139,8 @@ on nonencrypted
 on property:vold.decrypt=trigger_restart_framework
     mkdir /data/misc/mcRegistry 0775 system system
 
-service sswap /sbin/sswap -s -f 1536
+service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF000000000000000000000001.drbin -r /system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin -r /system/app/mcRegistry/ffffffffd00000000000000000000016.tlbin
     class core
-    user root
-    group root
-    oneshot
+    user system
+    group system
+    disabled
